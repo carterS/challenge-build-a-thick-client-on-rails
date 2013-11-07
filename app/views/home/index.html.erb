@@ -3,10 +3,28 @@
 
   <button id='get-quiz'>Get me a quiz!</button>
 
-  <div id="display-quiz">
-    <h3>Quiz</h3>
 
-  </div>
   
-
+  <div id="display-quiz">
+    <h2>Quiz</h2>
+    <div id="selected-quiz" class="hidden">
+      <span> - 
+        <a href="#" id="start-quiz"> Start Quiz</a>
+      </span>
+      <div id="display-question">
+        <h3 id="current-question-title"></h3>
+        <form>
+          <div id="display-choices"> 
+            
+           
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
+
+<div id='template' class="hidden">
+            <input type="radio" name="choice"/>
+            <span></span>
+          </div>

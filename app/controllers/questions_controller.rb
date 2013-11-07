@@ -2,9 +2,10 @@ class QuestionsController < ApplicationController
   respond_to :json
   # GET /quizzes/:quiz_id/questions/next.json
   def next
+    @simple_session = SimpleSession.new
     quiz = Quiz.find(params[:quiz_id])
     if quiz
-      last_answered_question_id = @simple_session.last_answered_question_id || 0
+      last_answered_question_id = (@simple_session.last_answered_question_id || 0)
       remaining_questions = quiz.questions.where("id > ?", last_answered_question_id)
       if remaining_questions.count > 0
         render json: { question: remaining_questions.first }.to_json
